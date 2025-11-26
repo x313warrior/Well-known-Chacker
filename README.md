@@ -15,4 +15,17 @@ A lightweight JavaScript tool to scan and detect well-known files and metadata e
 2. Paste the full script.
 3. Hit enter and watch the results.
 
-### 📁 Example Output
+
+---
+
+### 👤 Author
+
+**x313warrior**  
+[GitHub](https://github.com/x313warrior) • Security Researcher & Automation Developer
+
+---
+
+### ⚠️ Disclaimer
+
+This tool is intended for **authorized security testing and research only**. Do not use it on systems you don’t own or have explicit permission to test.
+
