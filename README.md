@@ -21,7 +21,7 @@ A lightweight JavaScript tool to scan and detect well-known files and metadata e
 ### 👤 Author
 
 **x313warrior**  
-[GitHub](https://github.com/x313warrior) • Security Researcher & Automation Developer
+[GitHub](https://github.com/x313warrior) • Security Researcher
 
 ---
 
