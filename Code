@@ -1,0 +1,55 @@
+/* Well-Known Discovery with Response Size + Full URL */
+
+const paths = [
+  '/.well-known/ai-plugin.json',
+  '/.well-known/assetlinks.json',
+  '/.well-known/apple-app-site-association',
+  '/.well-known/change-password',
+  '/.well-known/csaf/provider-metadata.json',
+  '/.well-known/dnt-policy.txt',
+  '/.well-known/gpc.json',
+  '/.well-known/host-meta',
+  '/.well-known/jwks.json',
+  '/.well-known/nodeinfo',
+  '/.well-known/oauth-authorization-server',
+  '/.well-known/openid-configuration',
+  '/.well-known/recovery',
+  '/.well-known/security.txt',
+  '/.well-known/trust.txt',
+  '/.well-known/webfinger',
+  '/ads.txt',
+  '/app-ads.txt',
+  '/favicon.ico',
+  '/humans.txt',
+  '/manifest.json',
+  '/robots.txt',
+  '/sitemap.xml'
+];
+
+const fetchWithSize = async (url) => {
+  const res = await fetch(url);
+  const blob = await res.blob();
+  return { res, size: blob.size };
+};
+
+paths.forEach(async p => {
+  const fullURL = location.origin + p;
+
+  try {
+    const { res, size } = await fetchWithSize(fullURL);
+
+    if (res.ok) {
+      console.log(
+        `%cFOUND: ${fullURL} (status ${res.status}, size ${size} bytes)`,
+        'color:white'
+      );
+    } else {
+      console.warn(
+        `EXISTS: ${fullURL} (status ${res.status}, size ${size} bytes)`
+      );
+    }
+
+  } catch (err) {
+    console.error(`NOT ACCESSIBLE: ${fullURL} (${err.message})`);
+  }
+});
