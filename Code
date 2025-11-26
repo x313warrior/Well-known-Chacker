@@ -1,4 +1,7 @@
-/* Well-Known Discovery with Response Size + Full URL Author: x313warrior */
+/* 
+  Well-Known Discovery with Response Size + Full URL
+  Author: x313warrior
+*/
 
 const paths = [
   '/.well-known/ai-plugin.json',
